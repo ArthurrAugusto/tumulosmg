@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perguntas Frequentes (FAQ) | Túmulos BH</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+    <div class="container header-content">
+        <a href="index.html" class="logo">
+    <img src="assets/img/Tumulos BH.jpg" alt="Logo Túmulos BH"> Túmulos BH
+</a>
+        <nav class="main-nav">
+            <button class="menu-toggle" aria-label="Abrir Menu">☰</button>
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">Sobre Nós</a></li> <li><a href="servicos.html">Serviços</a></li> <li><a href="portfolio.html">Portfólio</a></li> <li><a href="faq.html">FAQ</a></li> <li><a href="contato.html">Contato</a></li> </ul>
+        </nav>
+        <div class="header-social-buttons">
+            <a href="https://wa.me/5531971589003?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20da%20Túmulos%20BH."
+               target="_blank" class="social-btn header-whatsapp-btn" aria-label="Fale conosco pelo WhatsApp">
+                <img src="https://img.icons8.com/material-outlined/48/ffffff/whatsapp.png" alt="WhatsApp"> </a>
+            <a href="https://www.instagram.com/tumulosbhmg/"
+               target="_blank" class="social-btn header-instagram-btn" aria-label="Visite nosso Instagram">
+                <img src="https://img.icons8.com/material-outlined/48/ffffff/instagram-new.png" alt="Instagram"> </a>
+        </div>
+    </div>
+</header>
+
+    <main>
+        <section class="page-hero-section">
+            <div class="container">
+                <h1>Perguntas Frequentes (FAQ)</h1>
+                <p>Encontre respostas rápidas para as dúvidas mais comuns sobre nossos serviços.</p>
+            </div>
+        </section>
+
+        <section id="faq-content" class="main-content-section container">
+            <h2 class="section-title">Dúvidas Comuns</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Qual o tempo médio para a construção ou reforma de um túmulo/jazigo?
+                        <span class="icon">▼</span>
+                    </button>
+                    <div class="accordion-body">
+                        <p>O tempo pode variar significativamente dependendo da complexidade do projeto, dos materiais escolhidos e das condições climáticas. Pequenas reformas podem levar de alguns dias a uma semana, enquanto construções novas ou projetos personalizados podem levar de 30 a 90 dias. Sempre fornecemos um cronograma detalhado no orçamento.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Vocês atendem em todos os cemitérios de Belo Horizonte e região metropolitana?
+                        <span class="icon">▼</span>
+                    </button>
+                    <div class="accordion-body">
+                        <p>Sim, nossa equipe é licenciada e possui experiência para atuar nos principais cemitérios de Belo Horizonte, como Bonfim, Consolação, Saudade, Paz, entre outros, e também em diversas cidades da região metropolitana. Recomendamos confirmar o cemitério específico ao solicitar o orçamento.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Quais tipos de materiais vocês utilizam na construção?
+                        <span class="icon">▼</span>
+                    </button>
+                    <div class="accordion-body">
+                        <p>Trabalhamos com uma vasta gama de materiais de alta qualidade para garantir durabilidade e beleza, incluindo granito, mármore, ardósia, bronze (para letras e imagens), e porcelana (para fotos). A escolha do material é feita em conjunto com o cliente, para atender às suas preferências e orçamento.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Como faço para solicitar um orçamento?
+                        <span class="icon">▼</span>
+                    </button>
+                    <div class="accordion-body">
+                        <p>Você pode solicitar um orçamento de forma rápida e fácil através do nosso formulário de contato nesta página, pelo WhatsApp (link no cabeçalho), ou ligando para um de nossos telefones. Quanto mais detalhes você puder fornecer sobre o serviço desejado, mais preciso será o orçamento inicial.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Vocês oferecem serviços de manutenção e limpeza periódica?
+                        <span class="icon">▼</span>
+                    </button>
+                    <div class="accordion-body">
+                        <p>Sim, oferecemos planos de manutenção e limpeza periódica para garantir que o túmulo ou jazigo esteja sempre em perfeito estado, livre de sujidades e com a conservação adequada dos materiais. Entre em contato para saber mais sobre nossos pacotes de manutenção.</p>
+                    </div>
+                </div>
+                </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+    <div class="container">
+        <p>&copy; 2024 Túmulos BH. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // JavaScript para o menu hambúrguer (já existente)
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navList = document.querySelector('.nav-list');
+
+            if (menuToggle && navList) {
+                menuToggle.addEventListener('click', () => {
+                    navList.classList.toggle('active');
+                });
+
+                navList.querySelectorAll('a').forEach(item => {
+                    item.addEventListener('click', () => {
+                        navList.classList.remove('active');
+                    });
+                });
+            }
+
+            // JavaScript para o acordeão (FAQ)
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    // Fecha todos os outros itens abertos
+                    accordionHeaders.forEach(otherHeader => {
+                        if (otherHeader !== header && otherHeader.classList.contains('active')) {
+                            otherHeader.classList.remove('active');
+                            otherHeader.nextElementSibling.style.maxHeight = null;
+                        }
+                    });
+
+                    // Abre ou fecha o item clicado
+                    header.classList.toggle('active');
+                    const accordionBody = header.nextElementSibling;
+                    if (header.classList.contains('active')) {
+                        accordionBody.style.maxHeight = accordionBody.scrollHeight + 'px'; // Expande para a altura total
+                    } else {
+                        accordionBody.style.maxHeight = null; // Recolhe
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

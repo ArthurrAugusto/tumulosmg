@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria | Túmulos BH</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+    <div class="container header-content">
+        <a href="index.html" class="logo">
+    <img src="assets/img/Tumulos BH.jpg" alt="Logo Túmulos BH"> Túmulos BH
+</a>
+        <nav class="main-nav">
+            <button class="menu-toggle" aria-label="Abrir Menu">☰</button>
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">Sobre Nós</a></li> <li><a href="servicos.html">Serviços</a></li> <li><a href="portfolio.html">Portfólio</a></li> <li><a href="faq.html">FAQ</a></li> <li><a href="contato.html">Contato</a></li> </ul>
+        </nav>
+        <div class="header-social-buttons">
+            <a href="https://wa.me/5531971589003?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20da%20Túmulos%20BH."
+               target="_blank" class="social-btn header-whatsapp-btn" aria-label="Fale conosco pelo WhatsApp">
+                <img src="https://img.icons8.com/material-outlined/48/ffffff/whatsapp.png" alt="WhatsApp"> </a>
+            <a href="https://www.instagram.com/tumulosbhmg/"
+               target="_blank" class="social-btn header-instagram-btn" aria-label="Visite nosso Instagram">
+                <img src="https://img.icons8.com/material-outlined/48/ffffff/instagram-new.png" alt="Instagram"> </a>
+        </div>
+    </div>
+</header>
+
+    <main>
+        <section class="page-hero-section">
+            <div class="container">
+                <h1>Galeria</h1>
+                <p>Veja a qualidade e a sensibilidade dos nossos projetos e execuções de túmulos e jazigos.</p>
+            </div>
+        </section>
+
+        <section id="gallery" class="main-content-section container">
+            <h2 class="section-title">Cemitério do Bonfim</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="assets/img/20120618232520412288o-620x400.jpg" alt="">
+                    <div class="overlay"></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/20150408100832112796i.webp" alt="">
+                    <div class="overlay"></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/20201102115143805776e.webp" alt="">
+                    <div class="overlay"></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/bonfim-amira-hissa-34-644x351.jpg" alt="">
+                    <div class="overlay"></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/bonfim.webp" alt="">
+                    <div class="overlay"></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/cemiterio-do-bonfim-530x375.jpg" alt="">
+                    <div class="overlay"></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/cemitrio-do-bonfim-11-644x362.jpg" alt="">
+                    <div class="overlay"></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/download-1-266x190.jpg" alt="">
+                    <div class="overlay"></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/download-259x194.jpg" alt="">
+                    <div class="overlay"></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/eea4937b-c003-49e4-98cb-e6cea2acfcc0-600x600.jpg" alt="">
+                    <div class="overlay"></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/escultura-cemiterio-do-bonfim-644x429.jpg" alt="">
+                    <div class="overlay"></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/image-644x430.jpg" alt="">
+                    <div class="overlay"></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/images-1-266x190.jpg" alt="">
+                    <div class="overlay"></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/images-266x190.jpg" alt="">
+                    <div class="overlay"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2024 Túmulos BH. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navList = document.querySelector('.nav-list');
+
+            if (menuToggle && navList) {
+                menuToggle.addEventListener('click', () => {
+                    navList.classList.toggle('active');
+                });
+
+                navList.querySelectorAll('a').forEach(item => {
+                    item.addEventListener('click', () => {
+                        navList.classList.remove('active');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

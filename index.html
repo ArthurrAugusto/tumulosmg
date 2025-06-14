@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Túmulos BH | Construção e Reforma de Jazigos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+ <header class="main-header">
+    <div class="container header-content">
+        <a href="index.html" class="logo">
+    <img src="assets/img/Tumulos BH.jpg" alt="Logo Túmulos BH"> Túmulos BH
+</a>
+        <nav class="main-nav">
+            <button class="menu-toggle" aria-label="Abrir Menu">☰</button>
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+               <li><a href="index.html#about">Sobre Nós</a></li> <li><a href="servicos.html">Serviços</a></li> <li><a href="portfolio.html">Portfólio</a></li> <li><a href="faq.html">FAQ</a></li> <li><a href="contato.html">Contato</a></li> </ul>
+        </nav>
+        <div class="header-social-buttons">
+            <a href="https://wa.me/5531971589003?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20da%20Túmulos%20BH."
+               target="_blank" class="social-btn header-whatsapp-btn" aria-label="Fale conosco pelo WhatsApp">
+                <img src="https://img.icons8.com/material-outlined/48/ffffff/whatsapp.png" alt="WhatsApp"> </a>
+            <a href="https://www.instagram.com/tumulosbhmg/"
+               target="_blank" class="social-btn header-instagram-btn" aria-label="Visite nosso Instagram">
+                <img src="https://img.icons8.com/material-outlined/48/ffffff/instagram-new.png" alt="Instagram"> </a>
+        </div>
+    </div>
+</header>
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="container">
+                <h1>Construção e Reforma de Túmulos e Jazigos</h1>
+                <p>Atendimento humanizado e qualidade incomparável para um tributo digno.</p>
+                <a href="https://wa.me/5531971589003?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20da%20Túmulos%20BH." class="btn primary-btn" target="_blank">Solicite um Orçamento Agora</a>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2 class="section-title">Quem Somos</h2>
+                <p>Com quase 30 anos de dedicação e respeito, a <strong>Túmulos BH</strong> é uma construtora especializada em túmulos e jazigos licenciada pela Prefeitura de Belo Horizonte. Nosso compromisso é oferecer soluções completas e humanizadas para construção, reforma e manutenção, garantindo um tributo digno e duradouro aos seus entes queridos.</p>
+                <p>Nossa história é marcada pela seriedade, pontualidade e pela excelência em cada projeto, sempre honrando a memória e a história de cada família. Atendemos os principais cemitérios de Belo Horizonte e região metropolitana.</p>
+                <a href="https://www.instagram.com/tumulosbhmg/" class="btn secondary-btn" target="_blank">Saiba Mais Sobre Nós</a>
+            </div>
+        </section>
+
+        <section id="services-overview" class="services-overview-section">
+            <div class="container">
+                <h2 class="section-title">Nossos Serviços</h2>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <h3>Construção de Túmulos e Jazigos</h3>
+                        <p>Projetos personalizados e construção de alta qualidade para túmulos e jazigos, com materiais duráveis e acabamento impecável.</p>
+                        <a href="servicos.html" class="btn primary-btn-outline">Ver Detalhes</a>
+                    </div>
+                    <div class="service-item">
+                        <h3>Reforma e Restauração</h3>
+                        <p>Revitalizamos e restauramos jazigos antigos, devolvendo a beleza e a integridade, com total respeito ao design original.</p>
+                        <a href="servicos.html" class="btn primary-btn-outline">Ver Detalhes</a>
+                    </div>
+                    <div class="service-item">
+                        <h3>Manutenção e Limpeza</h3>
+                        <p>Serviços de manutenção preventiva e limpeza profissional para conservar o túmulo ou jazigo em perfeito estado.</p>
+                        <a href="servicos.html" class="btn primary-btn-outline">Ver Detalhes</a>
+                    </div>
+                </div>
+                <div class="text-center mt-40">
+                    <a href="servicos.html" class="btn primary-btn">Ver Todos os Serviços</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2024 Túmulos BH. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navList = document.querySelector('.nav-list');
+
+            if (menuToggle && navList) {
+                menuToggle.addEventListener('click', () => {
+                    navList.classList.toggle('active');
+                });
+
+                // Opcional: Fechar o menu quando um item é clicado (útil em mobile)
+                navList.querySelectorAll('a').forEach(item => {
+                    item.addEventListener('click', () => {
+                        navList.classList.remove('active');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

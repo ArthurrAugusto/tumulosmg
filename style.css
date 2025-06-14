@@ -1,0 +1,952 @@
+/* Reset básico para remover margens e paddings padrão dos navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho do elemento */
+}
+
+/* Estilos globais e cores base */
+body {
+    font-family: 'Montserrat', sans-serif; /* Define a fonte principal para todo o site */
+    line-height: 1.6; /* Espaçamento entre linhas para melhor legibilidade */
+    background-color: #FFFFFF; /* Fundo geral: Branco (conforme nova paleta) */
+    color: #3A5672; /* Texto principal: Azul Escuro (conforme nova paleta) */
+}
+
+/* Estilo para centralizar o conteúdo e limitar a largura */
+.container {
+    max-width: 1100px; /* Largura máxima para o conteúdo em telas maiores */
+    margin: 0 auto; /* Centraliza o container na página */
+    padding: 0 20px; /* Padding nas laterais para telas menores */
+}
+
+/* --- Estilos para Botões --- */
+.btn {
+    display: inline-block; /* Permite definir largura/altura e padding */
+    padding: 12px 28px; /* Espaçamento interno do botão */
+    border-radius: 5px; /* Cantos levemente arredondados */
+    text-decoration: none; /* Remove sublinhado */
+    font-weight: 700; /* Texto em negrito */
+    font-size: 1.1em; /* Tamanho da fonte do botão */
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transição suave para hover */
+    cursor: pointer; /* Indica que é clicável */
+    border: none; /* Remove borda padrão */
+}
+
+.primary-btn {
+    background-color: #5B84AA; /* NOVA COR: Azul Principal (conforme nova paleta) */
+    color: #FFFFFF; /* Texto branco */
+}
+
+.primary-btn:hover {
+    background-color: #3A5672; /* NOVA COR HOVER: Azul Escuro (conforme nova paleta) */
+    transform: translateY(-2px); /* Efeito de "levitar" no hover */
+}
+
+.secondary-btn {
+    background-color: #EAF1F6; /* Fundo secundário: Azul acinzentado super claro (conforme nova paleta) */
+    color: #3A5672; /* Texto: Azul Escuro */
+    border: 1px solid #B0C4D8; /* Borda: Azul claro (conforme nova paleta) */
+}
+
+.secondary-btn:hover {
+    background-color: #B0C4D8; /* Um azul um pouco mais escuro no hover */
+    transform: translateY(-2px);
+}
+
+/* Botão com borda, sem preenchimento, cor de destaque */
+.primary-btn-outline {
+    background-color: transparent;
+    color: #3A5672; /* NOVA COR DE DESTAQUE: Azul Escuro */
+    border: 2px solid #3A5672; /* Borda com a cor de destaque */
+}
+
+.primary-btn-outline:hover {
+    background-color: #3A5672; /* Preenche no hover */
+    color: #FFFFFF; /* Texto branco no hover */
+    transform: translateY(-2px);
+}
+
+
+/* --- Estilos para o Cabeçalho e Navegação --- */
+.main-header {
+    background-color: #5B84AA; /* NOVA COR: Azul Principal (conforme nova paleta) */
+    color: #FFFFFF; /* Texto branco */
+    padding: 15px 0;
+    position: relative; /* Importante para o menu mobile absoluto */
+    z-index: 100; /* Garante que o cabeçalho fique por cima de outros elementos */
+}
+
+.header-content {
+    display: flex; /* Para alinhar o logo, menu e botões sociais lado a lado */
+    justify-content: space-between; /* Espaça-os para as extremidades */
+    align-items: center; /* Centraliza verticalmente */
+    flex-wrap: wrap; /* Permite que os itens quebrem linha em telas menores */
+    gap: 20px; /* Espaçamento entre os itens do cabeçalho */
+}
+
+.logo {
+    color: #FFFFFF; /* Texto branco */
+    font-size: 1.8em; /* Tamanho maior para o logo */
+    font-weight: 700; /* Negrito */
+    text-decoration: none; /* Remove sublinhado padrão do link */
+    display: flex; /* Para alinhar a imagem e o texto do logo */ /* NOVA PROPRIEDADE */
+    align-items: center; /* Centraliza verticalmente a imagem e o texto */ /* NOVA PROPRIEDADE */
+    gap: 8px; /* Espaçamento entre a imagem e o texto do logo */ /* NOVA PROPRIEDADE */
+}
+
+.logo img { /* NOVA REGRA */
+    height: 30px; /* Altura da imagem da logo */
+    width: auto; /* Largura automática para manter proporção */
+    filter: brightness(0) invert(1); /* Tentar deixar a logo branca se for colorida */ /* NOVA PROPRIEDADE */
+}
+
+/* Navegação */
+.main-nav .nav-list {
+    list-style: none; /* Remove os marcadores de lista */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Itens do menu em linha */
+}
+
+.main-nav .nav-list li {
+    margin-left: 30px; /* Espaçamento entre os itens do menu */
+}
+
+.main-nav .nav-list a {
+    color: #FFFFFF; /* Texto branco */
+    text-decoration: none;
+    font-weight: 600; /* Seminegrito para os links */
+    padding: 5px 0; /* Espaçamento interno para a área clicável */
+    transition: color 0.3s ease; /* Transição suave para o efeito hover */
+}
+
+.main-nav .nav-list a:hover {
+    color: #3A5672; /* NOVA COR DE DESTAQUE HOVER: Azul Escuro */
+}
+
+/* Estilo para o Link Ativo no Menu */
+.main-nav .nav-list a.active {
+    color: #3A5672; /* NOVA COR DE DESTAQUE: Azul Escuro para o link da página atual */
+    border-bottom: 2px solid #3A5672; /* Adiciona uma linha abaixo para destacar */
+    padding-bottom: 3px; /* Pequeno espaçamento entre o texto e a linha */
+}
+
+.main-nav .nav-list a.active:hover {
+    color: #3A5672; /* Mantém a cor no hover para o ativo */
+}
+
+
+/* Menu Hambúrguer (Botão) */
+.menu-toggle {
+    display: none; /* Esconde o botão hambúrguer por padrão (visível apenas em mobile) */
+    background: none;
+    border: none;
+    color: #FFFFFF; /* Cor branca */
+    font-size: 2em;
+    cursor: pointer;
+    padding: 5px; /* Adiciona um pouco de padding para facilitar o clique */
+}
+
+/* --- Estilos para os Botões Sociais no Cabeçalho --- */
+.header-social-buttons {
+    display: flex; /* Alinha os botões sociais lado a lado */
+    gap: 10px; /* Espaçamento entre os botões */
+    align-items: center;
+}
+
+.header-social-buttons .social-btn {
+    background-color: transparent; /* Sem fundo de cor, apenas o ícone */
+    border-radius: 50%;
+    width: 40px; /* Tamanho do botão no cabeçalho */
+    height: 40px;
+    box-shadow: none; /* Remove a sombra padrão */
+    transition: transform 0.2s ease;
+}
+
+.header-social-buttons .social-btn:hover {
+    transform: scale(1.1); /* Um pequeno zoom no hover */
+    box-shadow: none;
+}
+
+.header-social-buttons .social-btn img {
+    width: 32px; /* Tamanho dos ícones no cabeçalho */
+    height: 32px;
+    /* Ícones PNG já devem ser brancos, se não, aplicar filtro CSS (pode não funcionar para todos) */
+    /* filter: brightness(0) invert(1); */
+}
+
+
+/* --- Hero Section (Página Inicial) --- */
+.hero-section {
+    background-image: url('https://images.pexels.com/photos/3389886/pexels-photo-3389886.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); /* Exemplo de imagem de paisagem */
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed; /* Efeito parallax (opcional, remova se não gostar) */
+
+    color: #FFFFFF; /* Texto branco */
+    text-align: center;
+    padding: 120px 20px; /* Mais padding para dar espaço */
+    min-height: 500px; /* Altura mínima da seção */
+
+    /* Para centralizar o conteúdo verticalmente */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Para o overlay de cor */
+}
+
+/* Overlay escuro para melhorar a legibilidade do texto na imagem */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(58, 86, 114, 0.6); /* NOVA COR: Azul Escuro (3A5672) com 60% de opacidade */
+    z-index: 1; /* Garante que o overlay fique abaixo do conteúdo mas acima da imagem */
+}
+
+/* Garante que o conteúdo fique acima do overlay */
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-section h1 {
+    color: #FFFFFF; /* Título branco */
+    font-size: 3em; /* Tamanho grande para o título */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Sombra para o texto */
+}
+
+.hero-section p {
+    color: #FFFFFF; /* Texto branco */
+    font-size: 1.4em; /* Tamanho maior para o parágrafo */
+    margin-bottom: 40px; /* Mais espaço antes do botão */
+    max-width: 800px; /* Limita a largura do parágrafo */
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+
+/* --- Estilos para Seções Gerais de Conteúdo (Home e Páginas Internas) --- */
+section {
+    padding: 80px 0; /* Padding vertical para todas as seções */
+    margin-bottom: 30px; /* Espaço entre as seções */
+    background-color: #FFFFFF; /* Fundo branco para as seções */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Sombra suave para "elevar" as seções */
+    border-radius: 0 0 8px 8px; /* Ajustado: 0 em cima, 8px em baixo */ /* NOVA PROPRIEDADE */
+    margin-top: 0; /* Garante que não haja espaço extra acima */ /* NOVA PROPRIEDADE */
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #3A5672; /* NOVA COR: Azul Escuro (conforme nova paleta) */
+    position: relative;
+    padding-bottom: 10px; /* Espaço para a linha abaixo */
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 60px; /* Largura da linha */
+    height: 4px; /* Espessura da linha */
+    background-color: #3A5672; /* NOVA COR DE DESTAQUE: Azul Escuro para a linha */
+    border-radius: 2px;
+}
+
+/* --- Estilos para a Seção "Quem Somos" (Home) --- */
+.about-section {
+    text-align: center;
+}
+
+.about-section p {
+    color: #5B5B5B; /* Cinza Neutro */
+    max-width: 800px;
+    margin: 0 auto 20px auto; /* Centraliza o parágrafo e adiciona margem inferior */
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+/* --- Estilos para a Seção "Nossos Serviços" (Visão Geral na Home) --- */
+.services-overview-section {
+    background-color: #EAF1F6; /* NOVA COR: Azul acinzentado super claro (conforme nova paleta) */
+}
+
+.services-grid {
+    display: grid; /* Usa CSS Grid para o layout em colunas */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Colunas flexíveis */
+    gap: 30px; /* Espaçamento entre os itens */
+    margin-bottom: 40px; /* Espaço antes do botão "Ver Todos" */
+}
+
+.service-item {
+    background-color: #FFFFFF; /* Branco */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px); /* Efeito de "levitar" no hover */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15); /* Sombra mais intensa no hover */
+}
+
+.service-item h3 {
+    color: #3A5672; /* Azul Escuro */
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.service-item p {
+    color: #5B5B5B; /* Cinza Neutro */
+    margin-bottom: 25px;
+}
+
+/* Utilitária para centralizar texto e adicionar margem */
+.text-center {
+    text-align: center;
+}
+
+.mt-40 {
+    margin-top: 40px;
+}
+
+/* --- Seção de Herói para Páginas Internas (ex: Serviços, Portfólio, Contato) --- */
+.page-hero-section {
+    background-color: #3A5672; /* NOVA COR: Azul Escuro (conforme nova paleta) */
+    color: #FFFFFF; /* Texto branco */
+    padding: 80px 20px; /* Padding vertical */
+    text-align: center;
+    margin-bottom: 30px; /* Espaço antes da próxima seção */
+}
+
+.page-hero-section h1 {
+    font-size: 2.8em;
+    margin-bottom: 15px;
+    color: #FFFFFF; /* Título branco */
+}
+
+.page-hero-section p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- Estilos para a Lista Completa de Serviços (Página servicos.html) --- */
+.services-full-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Duas colunas de largura igual */
+    gap: 30px; /* Espaçamento entre os itens */
+}
+
+.service-detail-item {
+    background-color: #FFFFFF; /* Branco */
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    display: flex; /* Para alinhar o número e o texto */
+    align-items: flex-start; /* Alinha o conteúdo ao topo do item */
+    gap: 15px; /* Espaçamento entre o número e o conteúdo textual */
+}
+
+.service-number {
+    background-color: #3A5672; /* NOVA COR DE DESTAQUE: Azul Escuro */
+    color: #FFFFFF; /* Texto branco */
+    border-radius: 50%;
+    width: 40px; /* Aumenta um pouco o tamanho do círculo do número */
+    height: 40px;
+    min-width: 40px; /* Garante que o círculo não encolha */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.2em; /* Aumenta o tamanho da fonte do número */
+    flex-shrink: 0; /* IMPEDIR que o número encolha */
+}
+
+.service-detail-item h3 {
+    color: #3A5672; /* Azul Escuro */
+    font-size: 1.3em;
+    margin-bottom: 8px;
+    line-height: 1.3; /* Ajusta o espaçamento da linha do título */
+}
+
+.service-detail-item p {
+    color: #5B5B5B; /* Cinza Neutro */
+    font-size: 0.95em;
+    line-height: 1.6; /* Ajusta o espaçamento da linha do parágrafo */
+}
+
+/* --- Estilos para a Seção de Procedimentos (Página servicos.html) --- */
+.services-procedure-section {
+    background-color: #EAF1F6; /* NOVA COR: Azul acinzentado super claro (conforme nova paleta) */
+    border-radius: 0; /* Remove border-radius e shadow para um visual mais clean */
+    box-shadow: none;
+}
+
+.procedure-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.procedure-item {
+    background-color: #FFFFFF; /* Branco */
+    padding: 20px;
+    border-left: 5px solid #3A5672; /* NOVA COR DE DESTAQUE: Azul Escuro para a linha lateral */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.procedure-item h4 {
+    color: #3A5672; /* Azul Escuro */
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.procedure-item p {
+    color: #5B5B5B; /* Cinza Neutro */
+    font-size: 0.9em;
+}
+
+.contact-info-procedure {
+    background-color: #FFFFFF; /* Branco */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin-top: 40px;
+    text-align: center;
+}
+
+.contact-info-procedure h3 {
+    color: #3A5672; /* Azul Escuro */
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.contact-info-procedure p {
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.contact-info-procedure p strong {
+    color: #3A5672; /* NOVA COR DE DESTAQUE: Azul Escuro */
+}
+
+/* --- Rodapé (Footer) --- */
+.main-footer {
+    background-color: #5B84AA; /* NOVA COR: Azul Principal (conforme nova paleta) */
+    color: #FFFFFF; /* Texto branco */
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px; /* Espaço acima do rodapé */
+}
+
+/* --- Estilos para la Galería de Portafolio --- */
+.gallery-grid {
+    display: grid;
+    /* Força 3 colunas em desktop, cada uma ocupando 1 parte igual del espacio */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px; /* Espacio entre las imágenes */
+}
+
+.gallery-item {
+    position: relative; /* Para posicionar el overlay */
+    overflow: hidden; /* Garantiza que el overlay no se desborde */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* IMPORTANTE: Mantemos la altura fija aquí para garantizar uniformidad visual */
+    height: 250px; /* Altura fija para cada elemento de la galería */
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px); /* Efecto de levitar */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* Sombra más intensa */
+}
+
+.gallery-item img {
+    width: 100%; /* La imagen ocupa el 100% del ancho del contenedor */
+    height: 100%; /* La imagen llena el 100% de la ALTURA de su elemento de la galería */
+    object-fit: cover; /* Garantiza que la imagen llene el espacio sin distorsionarse, recortando si es necesario */
+    object-position: center; /* Intenta centrar la imagen en el recorte (útil para el enfoque) */
+    display: block; /* Elimina el espacio extra debajo de la imagen */
+}
+
+.gallery-item .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(58, 86, 114, 0.8); /* NOVA COR: Azul Escuro (3A5672) con 80% de opacidad */
+    color: #FFFFFF; /* Texto blanco */
+    padding: 15px;
+    transform: translateY(100%); /* Oculta el overlay por defecto */
+    transition: transform 0.3s ease; /* Transición suave para aparecer */
+    text-align: center;
+}
+
+.gallery-item:hover .overlay {
+    transform: translateY(0); /* Muestra el overlay al pasar el ratón */
+}
+
+.gallery-item .image-description {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* --- Contatos e Formulário (Página contato.html) --- */
+/* REVERTIDO PARA O ESTILO ANTERIOR COM NOVAS CORES */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Continua com grid adaptável, sem forçar 2 colunas */
+    gap: 30px; /* Espaçamento entre os itens */
+    margin-bottom: 40px; /* Espaço antes do mapa */
+}
+
+/* Removido fundo branco, border-radius e box-shadow do .contact-grid para voltar ao estilo anterior */
+/* Seções .main-content-section já tem background e shadow */
+
+.contact-info-block {
+    background-color: #FFFFFF; /* Fundo branco */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra suave */
+}
+
+.contact-info-block .section-title {
+    text-align: left; /* Título à esquerda */
+    font-size: 2em; /* Tamanho do título para o bloco */
+    margin-bottom: 25px;
+    padding-bottom: 5px;
+    color: #3A5672; /* NOVA COR: Azul Escuro */
+}
+
+.contact-info-block .section-title::after {
+    left: 0; /* Linha alinhada à esquerda */
+    transform: translateX(0);
+    background-color: #3A5672; /* NOVA COR: Azul Escuro para a linha */
+}
+
+.contact-info-block .contact-text {
+    font-size: 0.95em;
+    margin-bottom: 25px;
+    color: #5B5B5B; /* Cinza Neutro */
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.contact-item .contact-icon {
+    font-size: 1.5em; /* Tamanho dos ícones de contato */
+    color: #5B84AA; /* NOVA COR: Azul Principal para os ícones */
+    min-width: 25px; /* Garante espaço para o ícone */
+}
+
+.contact-item p {
+    margin: 0;
+    font-size: 0.95em;
+    color: #3A5672; /* Azul Escuro */
+}
+
+.contact-item p strong {
+    color: #3A5672; /* Azul Escuro */
+}
+
+/* Estilos do Formulário Otimizado (Revertido, mas com novas cores) */
+.contact-form-block {
+    background-color: #FFFFFF; /* Fundo branco */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra suave */
+}
+
+.contact-form-block .section-title {
+    text-align: left; /* Título à esquerda */
+    font-size: 2em;
+    margin-bottom: 25px;
+    padding-bottom: 5px;
+    color: #3A5672; /* NOVA COR: Azul Escuro */
+}
+
+.contact-form-block .section-title::after {
+    left: 0;
+    transform: translateX(0);
+    background-color: #3A5672; /* NOVA COR: Azul Escuro para a linha */
+}
+
+.contact-form-optimized .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form-optimized label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #3A5672; /* Azul Escuro */
+    font-size: 0.95em;
+}
+
+.contact-form-optimized input[type="text"],
+.contact-form-optimized input[type="email"],
+.contact-form-optimized input[type="tel"],
+.contact-form-optimized select,
+.contact-form-optimized textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #B0C4D8; /* NOVA BORDA: Azul claro (conforme nova paleta) */
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+    color: #3A5672; /* Azul Escuro */
+    background-color: #F8F8F8; /* Quase Branco */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form-optimized input[type="text"]:focus,
+.contact-form-optimized input[type="email"]:focus,
+.contact-form-optimized input[type="tel"]:focus,
+.contact-form-optimized select:focus,
+.contact-form-optimized textarea:focus {
+    border-color: #5B84AA; /* NOVA COR DE FOCO: Azul Principal */
+    box-shadow: 0 0 0 3px rgba(91, 132, 170, 0.2); /* Sombra suave com NOVA COR DE FOCO */
+    outline: none; /* Remove outline padrão do navegador */
+}
+
+.contact-form-optimized textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+    min-height: 120px; /* Altura mínima para textarea */
+}
+
+.contact-form-optimized .primary-btn {
+    width: auto; /* Botão com largura automática */
+    padding: 12px 40px; /* Mais padding para o botão de envio */
+    display: inline-block; /* Garante que fique inline-block */
+    margin-top: 10px;
+}
+
+.contact-form-block .form-disclaimer {
+    font-size: 0.85em;
+    color: #5B5B5B; /* Cinza Neutro */
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Estilos para a Seção de Mapa */
+.map-container {
+    background-color: #FFFFFF; /* Branco */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.map-container iframe {
+    border-radius: 8px; /* Cantos arredondados para o mapa */
+    margin-top: 20px; /* Espaço entre título e mapa */
+}
+
+.map-container .map-address {
+    font-size: 1em;
+    color: #5B5B5B; /* Cinza Neutro */
+    margin-top: 20px;
+}
+
+
+/* --- Estilos para o Acordeão (FAQ) --- */
+.accordion {
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.accordion-item {
+    background-color: #FFFFFF; /* Branco */
+    border-left: 5px solid transparent; /* Borda lateral que muda de color */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Sombra para o elemento */
+    margin-bottom: 20px; /* Espaço entre os elementos */
+    overflow: hidden; /* Garantiza que la sombra/borde funcione bien */
+    transition: border-left-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.accordion-item:hover {
+    border-left-color: #3A5672; /* NOVA COR DE DESTAQUE: Azul Escuro en el hover */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12); /* Sombra más intensa en el hover */
+}
+
+.accordion-header {
+    background-color: #FFFFFF; /* Branco */
+    color: #3A5672; /* Azul Escuro */
+    padding: 18px 25px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+    font-size: 1.15em;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.accordion-header.active {
+    background-color: #3A5672; /* NOVA COR: Azul Escuro cuando activo */
+    color: #FFFFFF; /* Texto blanco */
+}
+
+.accordion-header .icon {
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.accordion-header.active .icon {
+    transform: rotate(180deg);
+    color: #5B84AA; /* NOVA COR DE DESTAQUE: Azul Principal cuando activo */
+}
+
+.accordion-body {
+    background-color: #F8F8F8; /* Quase Branco */
+    color: #5B5B5B; /* Cinza Neutro */
+    padding: 0 25px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.accordion-body p {
+    padding: 15px 0;
+    margin: 0;
+    font-size: 0.95em;
+    line-height: 1.7;
+}
+
+
+/* --- Media Queries para la Responsividad --- */
+
+/* Telas más pequeñas (ej: móviles) - breakpoint en 768px */
+@media (max-width: 768px) {
+    /* Encabezado y Navegación Responsiva */
+    .header-content {
+        flex-direction: column; /* Organiza logo, nav y social en columna */
+        align-items: flex-start; /* Alinea todo a la izquierda */
+        gap: 15px; /* Reduce el espaciado */
+    }
+
+    .main-nav .nav-list {
+        flex-direction: column; /* Elementos del menú en columna en móvil */
+        background-color: #5B84AA; /* NOVA COR: Azul Principal (conforme nova paleta) */
+        position: absolute; /* Posición absoluta para que el menú flote */
+        top: 100%; /* Comienza justo debajo del encabezado */
+        left: 0;
+        width: 100%; /* Ocupa todo el ancho */
+        padding: 15px 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.2); /* Sombra para destacar */
+        display: none; /* OCULTA el menú por defecto en móvil */
+        opacity: 0; /* Inicia con opacidad 0 para la transición */
+        transform: translateY(-10px); /* Inicia un poco por encima para efecto de caída */
+        transition: opacity 0.3s ease, transform 0.3s ease; /* Transición suave */
+    }
+
+    .main-nav .nav-list.active {
+        display: flex; /* MUESTRA el menú cuando se añade la clase 'active' (vía JS) */
+        opacity: 1; /* Transición de opacidad */
+        transform: translateY(0); /* Vuelve a la posición normal */
+    }
+
+    .main-nav .nav-list li {
+        margin: 0; /* Elimina el margen lateral */
+        padding: 10px 0; /* Espaciado vertical entre los elementos */
+        text-align: center;
+    }
+
+    .main-nav .nav-list a {
+        padding: 10px 20px; /* Más relleno para facilitar el clic en móvil */
+        display: block; /* Hace que el enlace ocupe todo el ancho del elemento para una mayor área de clic */
+    }
+
+    .menu-toggle {
+        display: block; /* MUESTRA el botón de hamburguesa en pantallas más pequeñas */
+    }
+
+    .header-social-buttons {
+        display: none; /* Oculta los botones sociales fuera del menú de hamburguesa en móvil */
+    }
+
+    /* Ajustes para enlace activo en móvil */
+    .main-nav .nav-list a.active {
+        border-bottom: none; /* Elimina la línea en móvil para una mejor visualización */
+        background-color: rgba(58, 86, 114, 0.2); /* Fondo sutil con NOVA COR DE DESTAQUE */
+    }
+
+    /* Sección de Héroe Responsiva */
+    .hero-section {
+        padding: 80px 20px; /* Reduce el relleno en pantallas más pequeñas */
+        min-height: 400px; /* Reduce la altura mínima */
+        background-attachment: scroll; /* Elimina el efecto parallax en móvil */
+    }
+
+    .hero-section h1 {
+        font-size: 2.2em; /* Reduce el tamaño del título */
+    }
+
+    .hero-section p {
+        font-size: 1.1em; /* Reduce el tamaño del párrafo */
+    }
+
+    .btn {
+        padding: 10px 20px; /* Adapta el relleno del botón */
+        font-size: 1em; /* Adapta el tamaño de la fuente del botón */
+    }
+
+    /* Seções de Contenido General Responsivas */
+    section {
+        padding: 50px 15px; /* Reduce el relleno en móvil */
+        margin-bottom: 20px;
+    }
+
+    .section-title {
+        font-size: 2em; /* Reduce el tamaño del título de la sección */
+        margin-bottom: 30px;
+    }
+
+    .section-title::after {
+        width: 40px; /* Línea más pequeña en móvil */
+    }
+
+    .about-section p {
+        font-size: 1em; /* Reduce el tamaño del texto */
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas muy pequeñas */
+        gap: 20px;
+    }
+
+    .service-item {
+        padding: 25px;
+    }
+
+    /* Sección de Héroe para Páginas Internas Responsiva */
+    .page-hero-section {
+        padding: 60px 15px;
+    }
+
+    .page-hero-section h1 {
+        font-size: 2.2em;
+    }
+
+    .page-hero-section p {
+        font-size: 1em;
+    }
+
+    /* Lista Completa de Servicios Responsiva */
+    .services-full-list {
+        grid-template-columns: 1fr; /* Una columna en móvil */
+        gap: 20px;
+    }
+
+    .service-detail-item {
+        flex-direction: row; /* Número y texto LADO A LADO en móvil también */
+        align-items: flex-start; /* Alinea el contenido en la parte superior */
+        text-align: left; /* Garantiza que el texto quede alineado a la izquierda dentro del elemento */
+        gap: 15px; /* Espacio entre el número y el texto */
+    }
+
+    .service-number {
+        margin-bottom: 0; /* Elimina el margen inferior si el número está al lado */
+    }
+
+    /* Sección de Procedimientos Responsiva */
+    .procedure-list {
+        grid-template-columns: 1fr; /* Una columna en móvil */
+        gap: 15px;
+    }
+
+    .contact-info-procedure {
+        padding: 20px;
+    }
+
+    /* Galería Responsiva */
+    .gallery-grid {
+        grid-template-columns: 1fr; /* Una columna en móvil */
+        gap: 15px;
+    }
+
+    .gallery-item {
+        height: 200px; /* Fuerza la altura fija en móvil */
+    }
+    .gallery-item img {
+        height: 100%; /* La imagen llena el 100% de la altura del elemento de la galería en móvil */
+    }
+
+    /* Media Query para FAQ */
+    .accordion {
+        margin: 20px auto;
+    }
+
+    .accordion-item {
+        margin-bottom: 15px;
+        border-left-width: 3px; /* Borde más pequeño en móvil */
+    }
+
+    .accordion-header {
+        padding: 15px 20px;
+        font-size: 1em;
+    }
+
+    .accordion-body {
+        padding: 0 20px;
+    }
+
+    .accordion-body p {
+        padding: 10px 0;
+    }
+
+    /* Ajustes para la sección de contacto responsiva */
+    .contact-grid {
+        grid-template-columns: 1fr; /* Una única columna en móvil */
+        gap: 30px;
+        padding: 25px; /* Reduce el relleno en móvil */
+    }
+
+    .contact-info-block {
+        padding: 20px; /* Reduce el relleno en móvil */
+    }
+
+    .contact-info-block .section-title {
+        font-size: 1.8em; /* Reduce el título en móvil */
+    }
+
+    .contact-form-block .section-title {
+        font-size: 1.8em; /* Reduce el título en móvil */
+    }
+
+    .contact-form-optimized .primary-btn {
+        width: 100%; /* El botón ocupa todo el ancho en móvil */
+        padding: 15px 20px;
+    }
+
+    .map-container {
+        padding: 25px; /* Reduce el relleno en móvil */
+    }
+}
